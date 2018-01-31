@@ -1,6 +1,25 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
+.controller('DashCtrl', function($scope) {
+  
+})
+
+.controller('TesteCtrl', function($scope) {
+  
+})
+
+.controller('LoginCtrl', function($scope, $state) {
+  $scope.dados = {
+    usuario: 'caiqueandrade',
+    senha: '123456'
+  };
+
+  $scope.fazerLogin = (usuario, senha) => {
+    if( (usuario == $scope.dados.usuario) && (senha == $scope.dados.senha) ){
+      $state.go('tab.dash');
+    }
+  }
+})
 
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
